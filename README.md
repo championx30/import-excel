@@ -22,18 +22,16 @@
       CREATED_BY varchar2(50),  
       MODIFIED_DATE date  default sysdate,  
       MODIFIED_BY varchar2(50)  
-      );
+      );  
     ALTER TABLE ipa.ifo_steel_import_export
     ADD(
     CONSTRAINT steel_pk PRIMARY KEY(RECORD_ID)
-    );
-
+    );  
     CREATE SEQUENCE seq_ifo_steel_import_export
     MINVALUE 1
     START WITH 1
     INCREMENT BY 1
-    CACHE 10;
-
+    CACHE 10;  
     CREATE OR REPLACE TRIGGER steel_on_insert
         BEFORE INSERT ON IPA.ifo_steel_import_export
         FOR EACH ROW
