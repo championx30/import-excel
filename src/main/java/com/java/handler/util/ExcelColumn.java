@@ -1,4 +1,4 @@
-package com.vietanh.test.util;
+package com.java.handler.util;
 
 import org.apache.commons.lang3.StringUtils;
 

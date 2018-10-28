@@ -1,4 +1,4 @@
-package com.vietanh.test.main;
+package com.java.view;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import com.vietanh.test.output.Output;
-import com.vietanh.test.setting.Setting;
+import com.java.handler.output.Output;
+import com.java.init.Setting;
 
 public class Console {
 

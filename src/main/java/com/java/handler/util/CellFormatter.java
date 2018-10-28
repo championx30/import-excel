@@ -1,4 +1,4 @@
-package com.vietanh.test.util;
+package com.java.handler.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 
-import com.vietanh.test.setting.Setting;
+import com.java.init.Setting;
 
 public class CellFormatter {
 

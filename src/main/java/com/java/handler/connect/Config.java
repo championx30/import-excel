@@ -1,4 +1,4 @@
-package com.vietanh.test.sql;
+package com.java.handler.connect;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package com.vietanh.test.setting;
+package com.java.init;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,7 +9,7 @@ import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.vietanh.test.util.ExcelColumn;
+import com.java.handler.util.ExcelColumn;
 
 public final class Setting {
 

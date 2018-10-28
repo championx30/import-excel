@@ -1,5 +1,5 @@
 
-package com.vietanh.test.log;
+package com.java.handler.log;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
-import com.vietanh.test.setting.Setting;
+import com.java.init.Setting;
 
 public class Log {
 
