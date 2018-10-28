@@ -1,7 +1,7 @@
 # import-excel
 ### <p> Oracle query to created Table:<p>  
 ````
-CREATE TABLE ipa.ifo_steel_import_export(  
+CREATE TABLE ifo_steel_import_export(  
   RECORD_ID number(20,0) NOT NULL,  
   TAX_CODE varchar(15),  
   TRADER_NAME varchar2(300),  
@@ -24,7 +24,7 @@ CREATE TABLE ipa.ifo_steel_import_export(
   MODIFIED_DATE date  default sysdate,  
   MODIFIED_BY varchar2(50)  
   );  
-ALTER TABLE ipa.ifo_steel_import_export ADD(  
+ALTER TABLE ifo_steel_import_export ADD(  
   CONSTRAINT steel_pk PRIMARY KEY(RECORD_ID)
 );  
   CREATE SEQUENCE seq_ifo_steel_import_export  
@@ -33,11 +33,11 @@ ALTER TABLE ipa.ifo_steel_import_export ADD(
   INCREMENT BY 1  
   CACHE 10;  
   CREATE OR REPLACE TRIGGER steel_on_insert  
-    BEFORE INSERT ON IPA.ifo_steel_import_export  
-    FOR EACH ROW  
-      BEGIN  
-        SELECT seq_ifo_steel_import_export.nextval  
-        into :new.RECORD_ID  
-        from dual;  
-      END;    
+  BEFORE INSERT ON IPA.ifo_steel_import_export  
+  FOR EACH ROW  
+    BEGIN  
+      SELECT seq_ifo_steel_import_export.nextval  
+      into :new.RECORD_ID  
+      from dual;  
+    END;    
 ````
