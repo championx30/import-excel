@@ -43,21 +43,16 @@ public final class DataReader {
 		str = str.toLowerCase();
 		str = replaceSpecialChar(str);
 		str = replaceString(str);
-
 		// Bỏ các từ trong ngoặc bao gồm cặp dấu ngoặc
 		if (str.contains("(") && str.contains(")")) {
 			str = str.substring(0, str.indexOf("(")) + str.substring(str.indexOf(")") + 1, str.length());
 		}
-
 		StringBuilder result = new StringBuilder();
 		String[] arr = str.split("\\s+");
-
 		// List các từ viết hoa
 		List<String> listUpperCase = Arrays.asList("&", ".", "cn", "dv", "hh", "hhcn", "kcn", "tm", "tmdv", "tnhh",
 				"vn", "xnk");
-
 		for (String word : arr) {
-
 			// Viết hoa các từ nếu thuộc listUpperCase ở trên
 			for (String s : listUpperCase) {
 				if (word.contains(s))
@@ -66,7 +61,6 @@ public final class DataReader {
 			if (word.isEmpty()) {
 				continue;
 			}
-
 			// Viết hoa chữ cái đầu của các từ
 			result.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1)).append(" ");
 		}
@@ -82,7 +76,7 @@ public final class DataReader {
 				return "COMPANY";
 			}
 		}
-		return "PERSON";
+		return "PERSONAL";
 	}
 
 	public static String getCompanyAdd(String str) {
@@ -128,7 +122,6 @@ public final class DataReader {
 			else
 				str = str.substring(0, index);
 		}
-
 		str = str.substring(0, 1).toUpperCase() + str.substring(1);
 		return str;
 	}
@@ -189,5 +182,4 @@ public final class DataReader {
 		str = str.replaceAll("\\s+", " ");
 		return str;
 	}
-
 }

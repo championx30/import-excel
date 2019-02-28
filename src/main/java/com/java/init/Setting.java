@@ -15,32 +15,26 @@ public final class Setting {
 
 	private Setting() {
 	}
-
+	
+	private static String urlDb;
+	private static String userDb;
+	private static String passwordDb;
 	private static String user;
-
 	private static String sourceFilePath;
 	private static String sqlFilePath;
 	private static String logFilePath;
-
 	private static String tradingType;
-
 	private static String databaseName;
 	private static String tableName;
-
 	private static String datePattern;
 	private static String tradingDateCol;
-
 	private static String traderIdCol;
-
 	private static String traderNameCol;
-
 	private static String partnerNameCol;
-
-	private static String partnerAddCol1;
-	private static String partnerAddCol2;
-	private static String partnerAddCol3;
-	private static String partnerAddCol4;
-
+	private static String partnerAddCol01;
+	private static String partnerAddCol02;
+	private static String partnerAddCol03;
+	private static String partnerAddCol04;
 	private static String productDetailCol;
 	private static String volumeCol;
 	private static String unitCol;
@@ -52,6 +46,10 @@ public final class Setting {
 		Properties prop = new Properties();
 		try (InputStream input = new FileInputStream(new File("data/config.properties"))) {
 			prop.load(input);
+			
+			urlDb = prop.getProperty("urlDb");
+			userDb = prop.getProperty("userDb");
+			passwordDb = prop.getProperty("passwordDb");
 			sourceFilePath = prop.getProperty("sourceFilePath");
 			sqlFilePath = prop.getProperty("sqlFilePath");
 			logFilePath = prop.getProperty("logFilePath");
@@ -63,12 +61,11 @@ public final class Setting {
 			tradingType = prop.getProperty("tradingType");
 			traderIdCol = prop.getProperty("traderIdCol");
 			traderNameCol = prop.getProperty("traderNameCol");
-
 			partnerNameCol = prop.getProperty("partnerNameCol");
-			partnerAddCol1 = prop.getProperty("partnerAddCol1");
-			partnerAddCol2 = prop.getProperty("partnerAddCol2");
-			partnerAddCol3 = prop.getProperty("partnerAddCol3");
-			partnerAddCol4 = prop.getProperty("partnerAddCol4");
+			partnerAddCol01 = prop.getProperty("partnerAddCol01");
+			partnerAddCol02 = prop.getProperty("partnerAddCol02");
+			partnerAddCol03 = prop.getProperty("partnerAddCol03");
+			partnerAddCol04 = prop.getProperty("partnerAddCol04");
 			productDetailCol = prop.getProperty("productDetailCol");
 			volumeCol = prop.getProperty("volumeCol");
 			unitCol = prop.getProperty("unitCol");
@@ -76,6 +73,18 @@ public final class Setting {
 			exchangeRateCol = prop.getProperty("exchangeRateCol");
 			currencyCodeCol = prop.getProperty("currencyCodeCol");
 		}
+	}
+
+	public static String getUrlDb() {
+		return urlDb;
+	}
+
+	public static String getUserDb() {
+		return userDb;
+	}
+
+	public static String getPasswordDb() {
+		return passwordDb;
 	}
 
 	public static String getSourceFilePath() {
@@ -140,28 +149,28 @@ public final class Setting {
 		return ExcelColumn.toNumber(partnerNameCol);
 	}
 
-	public static short getPartnerAddCol1() {
-		if (StringUtils.isNumeric(partnerAddCol1))
-			return Short.parseShort(partnerAddCol1);
-		return ExcelColumn.toNumber(partnerAddCol1);
+	public static short getPartnerAddCol01() {
+		if (StringUtils.isNumeric(partnerAddCol01))
+			return Short.parseShort(partnerAddCol01);
+		return ExcelColumn.toNumber(partnerAddCol01);
 	}
 
-	public static short getPartnerAddCol2() {
-		if (StringUtils.isNumeric(partnerAddCol2))
-			return Short.parseShort(partnerAddCol2);
-		return ExcelColumn.toNumber(partnerAddCol2);
+	public static short getPartnerAddCol02() {
+		if (StringUtils.isNumeric(partnerAddCol02))
+			return Short.parseShort(partnerAddCol02);
+		return ExcelColumn.toNumber(partnerAddCol02);
 	}
 
-	public static short getPartnerAddCol3() {
-		if (StringUtils.isNumeric(partnerAddCol3))
-			return Short.parseShort(partnerAddCol3);
-		return ExcelColumn.toNumber(partnerAddCol3);
+	public static short getPartnerAddCol03() {
+		if (StringUtils.isNumeric(partnerAddCol03))
+			return Short.parseShort(partnerAddCol03);
+		return ExcelColumn.toNumber(partnerAddCol03);
 	}
 
-	public static short getPartnerAddCol4() {
-		if (StringUtils.isNumeric(partnerAddCol4))
-			return Short.parseShort(partnerAddCol4);
-		return ExcelColumn.toNumber(partnerAddCol4);
+	public static short getPartnerAddCol04() {
+		if (StringUtils.isNumeric(partnerAddCol04))
+			return Short.parseShort(partnerAddCol04);
+		return ExcelColumn.toNumber(partnerAddCol04);
 	}
 
 	public static short getProductDetailCol() {

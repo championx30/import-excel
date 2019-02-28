@@ -4,12 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.java.init.Setting;
+
 public class Config {
 	
 	public Connection getJDBCConnection() {
-		String url = "jdbc:oracle:thin:@10.200.38.10:1521/TESTDB";
-		String user = "ipa";
-		String password = "TEST123";
+		String url = Setting.getUrlDb();
+		String user = Setting.getUserDb();
+		String password = Setting.getPasswordDb();
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			return (Connection) DriverManager.getConnection(url, user, password);

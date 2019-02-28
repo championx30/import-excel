@@ -15,13 +15,10 @@ public class Console {
 			throws SQLException, FileNotFoundException, IOException, InterruptedException {
 
 		System.out.println("Please adjust date pattern in excel before run this program!");
-
 		// Khởi tạo các dữ liệu cần thiết
 		Setting.initData();
-
 		String input = "";
 		Scanner scanner = new Scanner(System.in);
-
 		do {
 			System.out.print("db/file?  ");
 			input = scanner.nextLine();
@@ -34,12 +31,8 @@ public class Console {
 		} else {
 			new Output().toFile();
 		}
-
-		TimeUnit.SECONDS.sleep(5);
-
 		scanner.close();
-
 		System.out.println("========== See you again ==========");
-
+		TimeUnit.SECONDS.sleep(5);
 	}
 }

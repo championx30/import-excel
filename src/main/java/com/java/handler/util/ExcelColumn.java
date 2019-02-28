@@ -1,7 +1,5 @@
 package com.java.handler.util;
 
-import org.apache.commons.lang3.StringUtils;
-
 public final class ExcelColumn {
 
 	private ExcelColumn() {
@@ -29,9 +27,5 @@ public final class ExcelColumn {
 			number = number / 26;
 		}
 		return sb.reverse().toString();
-	}
-
-	public static boolean isNumeric(String column) {
-		return StringUtils.isNumeric(column);
 	}
 }
